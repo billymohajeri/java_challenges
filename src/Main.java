@@ -7,16 +7,16 @@ public class Main {
 
     System.out.println(BLUE + "Enter two numbers:");
 
-    System.out.print("1st numbers: ");
+    System.out.print("1st number: ");
     Scanner scanner = new Scanner(System.in);
     double firstNumber = Double.parseDouble(scanner.nextLine());
 
-    System.out.print("2nd numbers: ");
+    System.out.print("2nd number: ");
     double secondNumber = Double.parseDouble(scanner.nextLine());
     String operation;
     do {
       System.out.printf("%nChoose an operation (Enter 1 to 4 or Q to quit):%n");
-      System.out.printf("1. Addition (+)%n2. Subtraction (-)%n3. Multiplication (*)%n4. division (÷)%n");
+      System.out.printf("1. Addition (+)%n2. Subtraction (-)%n3. Multiplication (*)%n4. Division (÷)%n");
       operation = scanner.nextLine();
 
       switch (operation) {
