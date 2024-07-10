@@ -16,7 +16,17 @@ public class Main {
     System.out.printf("%nChoose an operation (Enter 1 to 4):%n");
     System.out.printf("1. Addition (+)%n2. Subtraction (-)%n3. Multiplication (*)%n4. division (÷)%n");
     String operation = scanner.nextLine();
-//    System.out.println(firstNumber + secondNumber);
+//
+//    System.out.print("Result: ");
+    switch (operation) {
+      case "1" -> System.out.printf("%.2f + %.2f = %.2f", firstNumber, secondNumber, firstNumber + secondNumber);
+      case "2" -> System.out.println(firstNumber - secondNumber);
+      case "3" -> System.out.println(firstNumber * secondNumber);
+      case "4" -> System.out.println(firstNumber / secondNumber);
+
+    }
+
+
   }
 
 
