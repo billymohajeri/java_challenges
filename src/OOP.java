@@ -6,15 +6,15 @@ public class OOP {
     Book newBook = new Book("The Stranger", "9780394533056", LocalDate.now());
     Author newAuthor = new Author("Albert Camus", new Book[]{newBook});
     newBook.setAuthors(new Author[]{newAuthor});
-    User newUser = new User("Billy", new Book[]{}, false);
+    User newUser = new User("Billy", new Book[]{newBook}, false);
 
-    System.out.printf("%n***Book%nTitle: %s%nISBN: %s%nAuthor(s): %s%nBorrowed at: %s%n", newBook.getTitle(),
+    System.out.printf("%n=== Book ===%nTitle: %s%nISBN: %s%nAuthor(s): %s%nBorrowed at: %s%n", newBook.getTitle(),
             newBook.getISBN(), newBook.getAuthors()[0].getName(), newBook.getDate());
 
-    System.out.printf("%n***Author%nName: %s%nBooks: %s%n", newAuthor.getName(), newAuthor.getBooks()[0].getTitle());
+    System.out.printf("%n=== Author ===%nName: %s%nBooks: %s%n", newAuthor.getName(), newAuthor.getBooks()[0].getTitle());
 
-    System.out.printf("%n***User%nName: %s%nBooks: %s%nIs banned: %s%n", newUser.name, newUser.borrowedBooks,
-            newUser.isBanned);
+    System.out.printf("%n=== User ===%nName: %s%nBooks: %s%nIs banned: %s%n", newUser.getName(),
+            newUser.getBorrowedBooks()[0].getTitle(), newUser.getIsBanned());
 
 
   }
@@ -72,15 +72,26 @@ class Author {
 }
 
 class User {
-  public String name;
-  public Book[] borrowedBooks;
-  public boolean isBanned;
-
+  private String name;
+  private Book[] borrowedBooks;
+  private boolean isBanned;
 
   User(String name, Book[] borrowedBooks, boolean isBanned) {
     this.name = name;
     this.borrowedBooks = borrowedBooks;
     this.isBanned = isBanned;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public Book[] getBorrowedBooks() {
+    return borrowedBooks;
+  }
+
+  public boolean getIsBanned() {
+    return isBanned;
   }
 
 }
