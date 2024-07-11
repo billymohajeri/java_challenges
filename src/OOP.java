@@ -17,8 +17,19 @@ class Book {
     this.authors = authors;
     this.borrowedAt = borrowedAt;
   }
+
+  public String getTitle() {
+    return title;
+  }
 }
 
+class Author {
+  public String name;
+  public Book[] books;
 
+  Author(String name, Book[] books) {
+    this.name = name;
+    this.books = books;
+  }
 }
 

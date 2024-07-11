@@ -25,6 +25,8 @@ public class Game {
         System.out.println("Your number is too high. Try a lower number!");
       } else if (userNumber < randomNumber) {
         System.out.println("Your guess is too low. Try a higher number!");
+      } else if (userNumber == randomNumber && counter == 1) {
+        System.out.printf("%n%sUnbelievable!%s%nYou've guessed the number correctly with your first guess..%n", RED, BLUE);
       } else {
         System.out.printf("%n%sCongratulations!%s%nYou've guessed the number correctly with %d guess(es).%n", RED, BLUE, counter);
       }
