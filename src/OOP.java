@@ -21,15 +21,35 @@ class Book {
   public String getTitle() {
     return title;
   }
+
+  public String getISBN() {
+    return ISBN;
+  }
+
+  public Author[] getAuthors() {
+    return authors;
+  }
+
+  public Date getDate() {
+    return borrowedAt;
+  }
 }
 
 class Author {
-  public String name;
-  public Book[] books;
+  private String name;
+  private Book[] books;
 
   Author(String name, Book[] books) {
     this.name = name;
     this.books = books;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public Book[] getBooks() {
+    return books;
   }
 }
 
