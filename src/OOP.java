@@ -1,7 +1,22 @@
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.Arrays;
 
 public class OOP {
   public static void main(String[] args) {
+    Book newBook = new Book("The Stranger", "9780394533056", LocalDate.now());
+    Author newAuthor = new Author("Albert Camus", new Book[]{newBook});
+    newBook.setAuthors(new Author[]{newAuthor});
+    User newUser = new User("Billy", new Book[]{}, false);
+
+    System.out.printf("%n***Book%nTitle: %s%nISBN: %s%nAuthor(s): %s%nBorrowed at: %s%n", newBook.getTitle(),
+            newBook.getISBN(), newBook.getAuthors()[0].getName(), newBook.getDate());
+
+    System.out.printf("%n***Author%nName: %s%nBooks: %s%n", newAuthor.getName(), newAuthor.getBooks()[0].getTitle());
+
+    System.out.printf("%n***User%nName: %s%nBooks: %s%nIs banned: %s%n", newUser.name, newUser.borrowedBooks,
+            newUser.isBanned);
+
+
   }
 }
 
@@ -9,12 +24,11 @@ class Book {
   private String title;
   private String ISBN;
   private Author[] authors;
-  private Date borrowedAt;
+  private LocalDate borrowedAt;
 
-  Book(String title, String ISBN, Author[] authors, Date borrowedAt) {
+  Book(String title, String ISBN, LocalDate borrowedAt) {
     this.title = title;
     this.ISBN = ISBN;
-    this.authors = authors;
     this.borrowedAt = borrowedAt;
   }
 
@@ -30,8 +44,12 @@ class Book {
     return authors;
   }
 
-  public Date getDate() {
+  public LocalDate getDate() {
     return borrowedAt;
+  }
+
+  public void setAuthors(Author[] authors) {
+    this.authors = authors;
   }
 }
 
@@ -53,3 +71,16 @@ class Author {
   }
 }
 
+class User {
+  public String name;
+  public Book[] borrowedBooks;
+  public boolean isBanned;
+
+
+  User(String name, Book[] borrowedBooks, boolean isBanned) {
+    this.name = name;
+    this.borrowedBooks = borrowedBooks;
+    this.isBanned = isBanned;
+  }
+
+}
