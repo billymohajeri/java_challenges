@@ -3,17 +3,23 @@ import java.util.Arrays;
 
 public class OOP {
   public static void main(String[] args) {
+    final String RED = "\033[0;31m";
+    final String BLUE = "\033[0;34m";
+
     Book newBook = new Book("The Stranger", "9780394533056", LocalDate.now());
     Author newAuthor = new Author("Albert Camus", new Book[]{newBook});
     newBook.setAuthors(new Author[]{newAuthor});
     User newUser = new User("Billy", new Book[]{newBook}, false);
 
-    System.out.printf("%n=== Book ===%nTitle: %s%nISBN: %s%nAuthor(s): %s%nBorrowed at: %s%n", newBook.getTitle(),
+    System.out.println(RED + "\n=== Book ===" + BLUE);
+    System.out.printf("Title: %s%nISBN: %s%nAuthor(s): %s%nBorrowed at: %s%n", newBook.getTitle(),
             newBook.getISBN(), newBook.getAuthors()[0].getName(), newBook.getDate());
 
-    System.out.printf("%n=== Author ===%nName: %s%nBooks: %s%n", newAuthor.getName(), newAuthor.getBooks()[0].getTitle());
+    System.out.println(RED + "\n=== Author ===" + BLUE);
+    System.out.printf("Name: %s%nBooks: %s%n", newAuthor.getName(), newAuthor.getBooks()[0].getTitle());
 
-    System.out.printf("%n=== User ===%nName: %s%nBooks: %s%nIs banned: %s%n", newUser.getName(),
+    System.out.println(RED + "\n=== User ===" + BLUE);
+    System.out.printf("Name: %s%nBooks: %s%nIs banned: %s%n", newUser.getName(),
             newUser.getBorrowedBooks()[0].getTitle(), newUser.getIsBanned());
 
 
