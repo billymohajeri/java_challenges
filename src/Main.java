@@ -31,5 +31,6 @@ public class Main {
         default -> System.out.println(RED + "Invalid input! Please enter 1 to 4 or Q to quit." + BLUE);
       }
     } while (!operation.equalsIgnoreCase("q"));
+    scanner.close();
   }
 }
