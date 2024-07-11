@@ -24,10 +24,8 @@ public class Main {
         case "2" -> System.out.printf("%n%.2f - %.2f = %.2f%n", firstNumber, secondNumber, firstNumber - secondNumber);
         case "3" -> System.out.printf("%n%.2f x %.2f = %.2f%n", firstNumber, secondNumber, firstNumber * secondNumber);
         case "4" -> {
-          if (secondNumber == 0) {
-            System.out.println(RED + "Error! Can't divide by zero." + BLUE);
-            continue;
-          } else System.out.printf("%n%.2f ÷ %.2f = %.2f%n", firstNumber, secondNumber, firstNumber / secondNumber);
+          if (secondNumber == 0) System.out.println(RED + "Error! Can't divide by zero." + BLUE);
+          else System.out.printf("%n%.2f ÷ %.2f = %.2f%n", firstNumber, secondNumber, firstNumber / secondNumber);
         }
         case "q", "Q" -> System.out.printf("%nExiting the program. Thanks!%n");
         default -> System.out.println(RED + "Invalid input! Please enter 1 to 4 or Q to quit." + BLUE);
