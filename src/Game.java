@@ -10,11 +10,10 @@ public class Game {
     int randomNumber = (int) (Math.random() * 100) + 1;
 
     Scanner scanner = new Scanner(System.in);
-    System.out.println(BLUE + "I have chosen an integer between 1 and 100.");
+    System.out.println(BLUE + "\nI have chosen an integer between 1 and 100.");
     System.out.print("Try to guess it: ");
     do {
       try {
-        System.out.println("try again");
         userNumber = Integer.parseInt(scanner.nextLine());
         counter++;
       } catch (Exception e) {
@@ -27,10 +26,10 @@ public class Game {
       } else if (userNumber < randomNumber) {
         System.out.println("Your guess is too low. Try a higher number!");
       } else {
-        System.out.printf("Congratulations!%nYou've guessed the number correctly with %d guess(es).%n", counter);
+        System.out.printf("%n%sCongratulations!%s%nYou've guessed the number correctly with %d guess(es).%n", RED, BLUE, counter);
       }
     } while (randomNumber != userNumber);
-
+    scanner.close();
   }
 
 }
