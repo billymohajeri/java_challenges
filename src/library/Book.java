@@ -37,21 +37,3 @@ public class Book {
     _borrowedAt = borrowedAt;
   }
 }
-
-class Author {
-  private String name;
-  private Book[] books;
-
-  Author(String name, Book[] books) {
-    this.name = name;
-    this.books = books;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public Book[] getBooks() {
-    return books;
-  }
-}
