@@ -25,12 +25,16 @@ public class Book {
     return _authors;
   }
 
-  public LocalDate getDate() {
+  public LocalDate getBorrowedAt() {
     return _borrowedAt;
   }
 
   public void setAuthors(Author[] authors) {
     _authors = authors;
+  }
+
+  public void setBorrowedAt(LocalDate borrowedAt) {
+    _borrowedAt = borrowedAt;
   }
 }
 
