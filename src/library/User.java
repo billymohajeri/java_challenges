@@ -1,13 +1,15 @@
 package library;
 
+import java.util.ArrayList;
+
 public class User {
   private String _name;
-  private Book[] _borrowedBooks;
+  private ArrayList<Book> _borrowedBooks;
   private boolean _isBanned;
 
-  User(String name, boolean isBanned) {
+  User(String name, ArrayList<Book> borrowedBooks, boolean isBanned) {
     _name = name;
-
+    _borrowedBooks = borrowedBooks;
     _isBanned = isBanned;
   }
 
@@ -15,7 +17,7 @@ public class User {
     return _name;
   }
 
-  public Book[] getBorrowedBooks() {
+  public ArrayList<Book> getBorrowedBooks() {
     return _borrowedBooks;
   }
 
